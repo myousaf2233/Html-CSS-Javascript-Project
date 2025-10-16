@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Favorite Song</title>
+
+  <style>
+    body {
+      background-color: lightblue;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      color: darkblue;
+    }
+
+    #movingText {
+      color: red;
+      font-size: 24px;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎵 My Favorite Song 🎵</h1>
+
+  <!-- YouTube Video -->
+  <iframe width="560" height="315"
+    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+
+  <p id="movingText">Enjoy the music!</p>
+
+  <script>
+    // Simple animation - text moves left and right
+    let text = document.getElementById("movingText");
+    let position = 0;
+    let direction = 1;
+
+    function move() {
+      if (position > 100 || position < 0) direction *= -1;
+      position += direction;
+      text.style.left = position + "px";
+      requestAnimationFrame(move);
+    }
+
+    move();
+  </script>
+
+</body>
+</html>
